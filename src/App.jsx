@@ -3,16 +3,17 @@ import { Button } from 'reactstrap'
 import './App.css'
 import {Card} from './fetch'
 
-function AddToFav({favname, favusername}){
-return(
-  <>
-    <div className='container'>
-    <div >
-       <h4 > Name : {favname} + {favusername}</h4>
-     </div>
-     </div>
-  </>
-)
+function AddToFav({data}){
+console.log("data: ",data)
+  return(
+  data.map((item)=>{
+
+    return(
+      <h1 key={item.id} >{item.name}</h1>
+    )
+  })
+
+  )
 }
 
 function App() {
